@@ -1,0 +1,25 @@
+if process.env.NODE_ENV == 'production'
+	include /_partial/_ga_head
+meta(charset="utf-8")
+meta(name="description" content=meta.description)
+meta(name="keywords" content=meta.keywords)
+meta(property="og:url" content="http://school-manabi.jp"+pagePath)
+if pageClass == 'TOP'
+	meta(property="og:title" content="dummy")
+else 
+	meta(property="og:title" content=meta.title+' | dummy')
+meta(property="og:image" content='http://school-manabi.jp/assets/images/'+meta.ogImage)
+meta(property="og:description" content=meta.description)
+if pageClass == 'TOP'
+	meta(property="og:site_name" content='dummy')
+else 
+	meta(property="og:site_name" content=meta.title+' | dummy')
+meta(property="og:type" content="website")
+link(rel="shortcut icon" sizes="32x32" href=pathData+"favicon-32x32.ico" type="image/x-icon")
+meta(name="viewport" content="width=device-width, initial-scale=1.0")
+if pageClass == 'TOP'
+	title dummy
+else 
+	title #{meta.title} | dummy
+include _googlefont
+link(rel="stylesheet", href=pathData+"assets/css/style.css")

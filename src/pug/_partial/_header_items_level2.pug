@@ -1,0 +1,10 @@
+mixin header_items_level2(data)
+	ul.c_header_nav_list_level2
+		each itemLevel2 in data
+			li.c_header_nav_list_level2_item
+				if itemLevel2.link
+					a(href=itemLevel2.link).c_header_nav_list_level2_item_link
+						span !{itemLevel2.text}
+				else 
+					.c_header_nav_list_level2_item_link
+						span !{itemLevel2.text}

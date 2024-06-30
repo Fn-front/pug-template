@@ -1,0 +1,19 @@
+extend /_template/_default
+
+block variables
+	-  
+		var pathData = './';
+		var pagePath = '/';
+		var imgPath = pathData + 'assets/images/'
+		var meta = {
+				description: 'dummy',
+				keywords: 'dummy,dummy',
+				ogImage: 'og.png',
+				url: '',
+		};
+		var pageType = 'main';
+		var pageClass = 'TOP';
+
+block content
+	div.l_container_section
+		include _index_sec01

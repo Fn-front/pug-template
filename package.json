@@ -1,0 +1,38 @@
+{
+  "name": "tankyutekina-manabi-hojokin",
+  "version": "1.0.0",
+  "description": "探求的な学び補助金ホームページ制作のリポジトリです",
+  "main": "index.js",
+  "scripts": {
+    "start": "run-p dev watch",
+    "build": "run-s build:*",
+    "watch": "run-p watch:*",
+    "watch:html": "onchange \"src/**/*.pug\" -- npm run dev:html",
+    "watch:serve": "browser-sync start --config \"./bs-config.js\"",
+    "dev": "run-p dev:*",
+    "dev:html": "NODE_ENV=develop npm-run-all html:pug html:markuplint",
+    "html:markuplint": "markuplint \"src/**/*.pug\"",
+    "html:pug": "pug src/pug --out dist --basedir src/pug --pretty",
+		"build:js": "NODE_ENV=production webpack",
+    "build:html": "NODE_ENV=production pug src/pug --out build --basedir src/pug*  --pretty",
+		"createJson": "node mergeJson.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@markuplint/pug-parser": "3.12.0",
+    "autoprefixer": "10.4.16",
+    "browser-sync": "3.0.2",
+    "copy-webpack-plugin": "12.0.2",
+    "cpx": "1.5.0",
+    "markuplint": "3.15.0",
+    "npm-run-all": "4.1.5",
+    "onchange": "7.1.0",
+    "pug": "3.0.2",
+    "pug-cli": "github:pugjs/pug-cli#master",
+    "smooth-scroll": "16.1.3",
+    "webpack": "5.89.0",
+    "webpack-cli": "5.1.4",
+    "webpack-fix-style-only-entries": "0.6.1"
+  }
+}

@@ -1,0 +1,72 @@
+include _header_items
+
+-
+	var items = [
+		{
+			link: pathData,
+			text: 'dummy',
+		},
+		{
+			link: pathData+'dummy/',
+			text: 'dummy',
+			level2: [
+				{
+					link: pathData+'dummy/',
+					text: 'dummy',
+				},
+				{
+					link: pathData+'dummy/',
+					text: 'dummy',
+				},
+			]
+		},
+		{
+			link: pathData+'dummy/',
+			text: 'dummy',
+			level2: [
+				{
+					link: pathData+'dummy/#dummy',
+					text: 'dummy',
+				},
+				{
+					link: pathData+'dummy/#dummy',
+					text: 'dummy',
+				},
+				{
+					link: pathData+'dummy/#dummy',
+					text: 'dummy',
+				}
+			]
+		},
+		{
+			link: pathData+'dummy/',
+			text: 'dummy'
+		},
+		{
+			link: pathData+'assets/pdf/dummy.pdf',
+			text: 'dummy',
+			blank: true,
+		}
+	]
+	var imgPath = pathData + 'assets/images/'
+
+header.c_header#header
+	.c_header_inner
+		.c_header_top#nav-fix
+			.c_header_top_inner
+				button.c_header_button_menu#nav-fix-button
+					span.c_header_button_menu_line_main
+				.c_header_top_logo
+					a(href=pathData)
+						figure
+							picture
+								source(media="(max-width: 767px)", srcset=imgPath+"logo_sp.svg")
+								img(src=imgPath+"logo_pc.svg", alt="dummy")
+				nav.c_header_nav
+					+header_items(items)
+				.c_header_top_side
+					.c_header_top_side_contact
+						if pageClass == 'TOP'
+							a(href="").c_button_accent
+								span dummy
+

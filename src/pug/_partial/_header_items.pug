@@ -1,0 +1,31 @@
+include _header_items_level2
+
+
+mixin header_items(itemData)
+	ul.c_header_nav_list
+		each item in itemData 
+			if item.level2
+				li.c_header_nav_list_item.c_header_nav_list_item_level2_wrap
+					if item.link
+						a(href=item.link).c_header_nav_list_item_link
+							span !{item.text}
+					else 
+						.c_header_nav_list_item_link
+							span !{item.text}
+					if item.level2
+						+header_items_level2(item.level2)
+			else
+				if item.link
+					li.c_header_nav_list_item
+						if item.blank
+							a(href=item.link, target="_blank").c_header_nav_list_item_link
+								span !{item.text}
+						else
+							a(href=item.link).c_header_nav_list_item_link
+								span !{item.text}
+				else 
+					li.c_header_nav_list_item.c_header_nav_list_item_disabled
+						.c_header_nav_list_item_link
+							span !{item.text}
+					if item.level2
+						+header_items_level2(item.level2)

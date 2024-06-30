@@ -1,0 +1,23 @@
+block variables
+//- include /_mixin/_all
+
+doctype html
+html(lang="ja")
+	head
+		include /_partial/_meta
+		
+	body
+		if process.env.NODE_ENV == 'production'
+			include /_partial/_ga_body
+		include /_partial/_header
+		
+		if pageType == 'main'
+			main#main
+				block content
+		else if pageType == 'article'
+			article#main
+				block content
+
+
+		include /_partial/_footer
+		script(src=pathData+"assets/js/main.js")
