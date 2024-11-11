@@ -1,7 +1,7 @@
 {
-  "name": "tankyutekina-manabi-hojokin",
+  "name": "",
   "version": "1.0.0",
-  "description": "探求的な学び補助金ホームページ制作のリポジトリです",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "run-p dev watch",
